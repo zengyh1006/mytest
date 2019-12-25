@@ -12,7 +12,9 @@ import os
 
 
 def main():
-    inputFloder = os.path.abspath('.')  # D:/python3file
+
+    inputFloderbase = os.path.abspath('.')  # D:/python3file
+    inputFloder=os.path.join(inputFloderbase,'data')
     # <editor-fold desc="初始化文件目录和下载记录">
     # alreadyDown = 'D:/downloadData/alreadyDone.txt'
     # failed = 'D:/downloadData/failed.txt'
@@ -22,7 +24,7 @@ def main():
     failed = os.path.join(inputFloder, 'failed.txt')
     zero = os.path.join(inputFloder, 'zero.txt')
     if not os.path.exists(os.path.join(fileDirectory, 'csv')):
-        os.mkdir(os.path.join(fileDirectory, 'csv'))
+        os.makedirs(os.path.join(fileDirectory, 'csv'))
     if not os.path.exists(alreadyDown):
         createaFile = codecs.open(alreadyDown, "w+", 'utf-8')
         createaFile.close()
